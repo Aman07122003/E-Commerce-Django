@@ -2,8 +2,8 @@ services:
   - type: web
     name: myshop
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn myshop.wsgi:application
+    buildCommand: cd myshop && pip install -r requirements.txt
+    startCommand: cd myshop && gunicorn myshop.wsgi:application
     envVars:
       - key: DEBUG
         value: "False"
