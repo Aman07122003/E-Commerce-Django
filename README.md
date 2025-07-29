@@ -41,11 +41,3 @@ A fully functional and responsive e-commerce website built with **Django**, **Ta
 - **Task Queue**: Celery + Redis
 
 ---
-
-## 📂 Installation
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
