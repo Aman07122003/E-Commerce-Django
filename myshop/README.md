@@ -1,0 +1,1 @@
+to Stat virtual environment = source env/E-COMMERSE/bin/activate

@@ -1,0 +1,39 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Shop{% endblock %}</title>
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans h-screen">
+
+    <!-- Header -->
+    <header class="bg-gray-800 h-[10%] text-white flex items-center justify-between py-4 px-6">
+        <div class="">
+            <a href="/" class="text-3xl font-extrabold">E-Commerse</a>
+        </div>
+        <div class="">
+            {% with total_items=cart|length %}
+                {% if total_items > 0 %}
+                    Your Cart:
+                    <a href="{% url 'cart:cart_detail' %}" class="text-blue-300 hover:text-blue-400">
+                        ({{ total_items }} item{{ total_items|pluralize }}, ₹{{ cart.get_total_price }})
+                    </a>
+                {% else %}
+                    Your Cart is empty.
+                {% endif %}
+            {% endwith %}
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full h-[90%]">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

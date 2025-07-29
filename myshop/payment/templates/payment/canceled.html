@@ -1,0 +1,10 @@
+{% extends "shop/base.html" %}
+{% block title %}Payment Failed{% endblock %}
+
+{% block content %}
+<div id="main">
+    <h2 style="color:red;">Payment Failed or Canceled</h2>
+    <p>Oops! Something went wrong. Please try again.</p>
+    <a href="{% url 'cart:cart_detail' %}" style="padding:10px 20px; background:#ffc107; color:#000; text-decoration:none;">Back to Cart</a>
+</div>
+{% endblock %}
