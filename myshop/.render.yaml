@@ -3,7 +3,7 @@ services:
     name: myshop
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn myshop.wsgi:application
+    startCommand: gunicorn myshop.myshop.wsgi:application
     envVars:
       - key: DEBUG
         value: "False"
